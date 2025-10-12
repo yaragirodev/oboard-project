@@ -29,5 +29,53 @@ proot-distro install debian
 proot-distro login debian
 ```
 
+### 1.5. Установите все необходимое
+Для работы приложения необходим Python и curl, если он не установлен, установите.
+```bash
+apt update && apt upgrade -y
+apt install python3 curl
+```
+Нужные библиотеки в Python:
+```bash
+pip install flask requests pyftpdlib
+```
+А также LXDE, tigervnc-server и git:
+```bash
+apt install lxde tigervnc-standalone-server git -y
+```
+
 # 2. Развертка OBoard
-я тут продолжу, щас выложу на гитхаб исходники
+
+### 2.1. Настройка VNC, запуск LXDE и подключение через VNC Viewer на ПК
+Настройте запуск LXDE:
+```bash
+mkdir -p ~/.vnc
+echo -e '#!/bin/sh\nxrdb $HOME/.Xresources\nstartlxde &' > ~/.vnc/xstartup
+chmod +x ~/.vnc/xstartup
+```
+
+Задайте пароль VNC:
+```bash
+vncserver :1
+```
+
+После завершите процесс VNC для применения пароля:
+```bash
+vncserver -kill :1
+```
+
+### 2.2. Запуск LXDE!
+Запустите VNC сервер с LXDE под ваше разрешение:
+```bash
+vncserver :1 -geometry 2160x1080 -depth 24 -localhost no
+```
+
+``-localhost no`` - служит для того чтобы вы могли подключится к этому серверу с другого устройства.
+
+### 2.3. Подключение с ПК, развертка OBoard
+Если у вас на ПК Linux то, скачивайте ``tigervnc-viewer``
+
+Откройте LXTerm, Склонируйте репозиторий:
+```bash
+git clone https://github.com/yaragirodev/oboard-project.git
+```
