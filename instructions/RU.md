@@ -127,6 +127,8 @@ eno1: flags=<...><UP,BROADCAST,RUNNING,MULTICAST>  mtu <...>
 ---
 После подключения:
 
+![lxterm](lxterm.png)
+
 Откройте LXTerm, Склонируйте репозиторий:
 ```bash
 git clone https://github.com/yaragirodev/oboard-project.git
