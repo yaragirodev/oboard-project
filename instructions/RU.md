@@ -183,3 +183,4 @@ firefox --kiosk <ВАШ URL>
 Скачайте приложение AVNC и установите его.
 
 ##### В приложении AVNC:
+![avnc_login](avnc1.png)
