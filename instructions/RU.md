@@ -88,6 +88,8 @@ eno1: flags=<...><UP,BROADCAST,RUNNING,MULTICAST>  mtu <...>
 Вам нужен этот IP.
 <br>
 Запустите TigerVNC Viewer, вставьте ваш IP и напишите порт ``5901``
+
+После введите пароль, тот что вводили при запуске команды ``vncserver :1``
 ![viewerGUI](tigervncviewer.png)
 
 #### Если у вас **Windows**:
@@ -134,5 +136,50 @@ eno1: flags=<...><UP,BROADCAST,RUNNING,MULTICAST>  mtu <...>
 git clone https://github.com/yaragirodev/oboard-project.git
 ```
 
-После чего откройте файловый менеджер (PCMan), и откройте папку ``oboard-roject-main``:
+После чего откройте файловый менеджер (PCMan), и откройте папку ``oboard-project``:
+
 ![pcman-folder](folders.png)
+
+Тут вы можете удалить папку ``instructions`` если вы все знаете, и она вам мешает.
+
+Так как вы все уже установили, в терминале заходите в папку и запускайте flask-сервер:
+```bash
+cd oboard-project
+python app.py
+```
+
+Готово! Сервер с интерфейсом запущен!
+
+### 2.4. Запуск интерфейса, его показ на экране вашего устройства
+#### Проверьте порт на котором запущен ваш интерфейс
+После запуска скрипта, в терминале появится лог:
+
+```bash
+root@localhost:~/Documents/OBoard/oboard# python app.py
+ * Serving Flask app 'app'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.12:5000
+Press CTRL+C to quit
+ * Restarting with stat
+```
+
+Скопируйте ``http://127.0.0.1:5000`` или ``http://192.168.1.12:5000``,
+запустите новый терминал и напишите:
+
+```bash
+firefox --kiosk <ВАШ URL>
+```
+
+У вас запустится Firefox (он уже установлен в LXDE) с интерфейсом OBoard!
+
+#### Запуск на экране самого устройства
+На своем устройстве, скройте Termux (НЕ ЗАКРЫВАЙТЕ!)
+
+Перейдите по [ссылке](https://github.com/gujjwal00/avnc), или просто напишите в поиске ``avnc``.
+
+Скачайте приложение AVNC и установите его.
+
+##### В приложении AVNC:
