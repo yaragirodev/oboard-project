@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.font-segoe { font-family: 'Segoe UI', sans-serif; }
+.font-monospace { font-family: 'Roboto Mono', monospace; }
+.font-serif { font-family: 'Cormorant Garamond', serif; }
+.font-google-sans { font-family: 'Google Sans Text', sans-serif; }
+.font-determination { font-family: '"Press Start 2P"', cursive; }
+.font-digital-clock { font-family: 'Orbitron', sans-serif; }
+
+
+body, html {
+    height: 100%;
+    width: 100%;
+    background: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+    color: #000000;
+    overflow: hidden;
+}
+
+body {
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.animations-disabled *, .animations-disabled *::before, .animations-disabled *::after {
+    transition: none !important;
+    animation: none !important;
+}
+
+.absolute-optimization-enabled *, .absolute-optimization-enabled *::before, .absolute-optimization-enabled *::after {
+    transition: none !important;
+    animation: none !important;
+}
+.absolute-optimization-enabled #settings-panel {
+    box-shadow: none;
+    background: white;
+}
+
+
+.page-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 20px;
+}
+
+.clock-display .time {
+    font-size: 25vw;
+    font-weight: 300;
+    line-height: 1;
+    transition: font-size 0.3s ease;
+}
+
+.clock-display .location-info {
+    display: flex; justify-content: space-between; width: 100%;
+    padding: 0 2vw; margin-top: 20px;
+}
+
+.clock-display .city, .clock-display .weather {
+    font-size: 5vw; font-weight: 300;
+}
+
+.swipe-button {
+    position: absolute;
+    bottom: 40px;
+    right: 50px;
+    color: #c9c3c3;
+    font-size: 3vw;
+    font-style: italic;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 10px;
+}
+.swipe-button:hover {
+    color: #888;
+}
+
+.ftp-page {
+    font-weight: 400; letter-spacing: 0.06em;
+}
+.ftp-status {
+    display: flex; align-items: center; font-size: 15vw;
+}
+.ftp-state { cursor: pointer; user-select: none; }
+.ftp-state.on { color: #078C00; }
+.ftp-state.off { color: #BD0000; }
+.connection-info { margin-top: 30px; font-size: 3.5vw; }
+
+#settings-icon {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-size: 40px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+#settings-panel {
+    position: absolute;
+    top: 80px;
+    left: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 99;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(-10px);
+}
+#settings-panel.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(0px);
+}
+#settings-panel h3 { margin-bottom: 15px; }
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+.setting-item label { margin-right: 20px; }
+
+
+@media (min-width: 1000px) {
+    .clock-display .time { font-size: 250px; }
+    .clock-display .city, .clock-display .weather { font-size: 50px; }
+    .swipe-button { font-size: 30px; }
+    .ftp-status { font-size: 150px; }
+    .connection-info { font-size: 35px; }
+    #settings-icon { font-size: 30px; }
+}
