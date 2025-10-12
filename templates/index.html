@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Google+Sans+Text:wght@300&family=Orbitron&family=Press+Start+2P&family=Roboto+Mono:wght@300&family=Segoe+UI:wght@300&display=swap" rel="stylesheet">
+    <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet">
+    <title>Clock</title>
+</head>
+<body>
+
+    <div id="settings-icon">⚙️</div>
+
+    <div id="settings-panel" class="hidden">
+        <h3>OBoard v1.2 Settings</h3>
+        <div class="setting-item">
+            <label for="seconds-toggle">Show seconds</label>
+            <input type="checkbox" id="seconds-toggle">
+        </div>
+        <div class="setting-item">
+            <label for="font-select">Clock font</label>
+            <select id="font-select">
+                <option value="font-segoe">Segoe UI (Default)</option>
+                <option value="font-monospace">Monospace</option>
+            </select>
+        </div>
+        <div class="setting-item">
+            <label for="animations-toggle">Turn oof the animations</label>
+            <input type="checkbox" id="animations-toggle">
+        </div>
+        <div class="setting-item">
+            <label for="absolute-optimization-toggle" title="Отключает все анимации, тени и прозрачность для максимальной производительности">ABSOLUTE OPTIMIZIATION</label>
+            <input type="checkbox" id="absolute-optimization-toggle">
+        </div>
+    </div>
+
+    <div class="page-wrapper">
+        <div id="clock-container" class="container">
+            <div class="clock-display">
+                <span id="time" class="time">{{ time }}</span>
+                <div class="location-info">
+                    <span class="city">Moscow</span>
+                    <span class="weather">{{ weather }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <button id="navigate-btn" class="swipe-button" data-target="/ftp">Swipe!</button>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+

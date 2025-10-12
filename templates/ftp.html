@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Segoe+UI:400&display=swap" rel="stylesheet">
+    <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet">
+    <title>FTP Server</title>
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="container ftp-page">
+            <div class="ftp-status">
+                <span class="ftp-label">FTP -</span>
+                <span id="ftp-on-btn" class="ftp-state on" style="display: {{ 'block' if ftp_status == 'ON' else 'none' }};">ON</span>
+                <span id="ftp-off-btn" class="ftp-state off" style="display: {{ 'block' if ftp_status == 'OFF' else 'none' }};">OFF</span>
+            </div>
+            <div class="connection-info">Connected to: {{ ip_address }}</div>
+        </div>
+    </div>
+    
+    <button id="navigate-btn" class="swipe-button" data-target="/">Swipe!</button>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
