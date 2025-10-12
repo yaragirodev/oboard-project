@@ -125,7 +125,7 @@ eno1: flags=<...><UP,BROADCAST,RUNNING,MULTICAST>  mtu <...>
 ПК и телефон должны быть **в одной Wi-Fi сети** (иначе VNC не подключится).
 
 ---
-После подключения:
+#### После подключения:
 
 ![lxterm](lxterm.png)
 
@@ -133,3 +133,6 @@ eno1: flags=<...><UP,BROADCAST,RUNNING,MULTICAST>  mtu <...>
 ```bash
 git clone https://github.com/yaragirodev/oboard-project.git
 ```
+
+После чего откройте файловый менеджер (PCMan), и откройте папку ``oboard-roject-main``:
+![pcman-folder](folders.png)
