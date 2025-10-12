@@ -73,7 +73,59 @@ vncserver :1 -geometry 2160x1080 -depth 24 -localhost no
 ``-localhost no`` - служит для того чтобы вы могли подключится к этому серверу с другого устройства.
 
 ### 2.3. Подключение с ПК, развертка OBoard
-Если у вас на ПК Linux то, скачивайте ``tigervnc-viewer``
+#### Если у вас **Linux**:
+Скачивайте ``tigervnc-viewer``
+
+```bash
+sudo apt install tigervnc-viewer
+```
+
+После чего в Termux напишите команду ``ifconfig``, у вас будет примерно такой вывод:
+```bash
+eno1: flags=<...><UP,BROADCAST,RUNNING,MULTICAST>  mtu <...>
+        inet 192.168.1.12 (ПРИМЕР)  netmask <...>  broadcast <...>
+```
+Вам нужен этот IP.
+<br>
+Запустите TigerVNC Viewer, вставьте ваш IP и напишите порт ``5901``
+![viewerGUI](tigervncviewer.png)
+
+#### Если у вас **Windows**:
+Скачайте **TigerVNC Viewer** с [официального сайта](https://sourceforge.net/projects/tigervnc/files/stable/).
+Установите и запустите.
+В поле *"VNC Server"* введите:
+
+   ```
+   <ваш-IP>:5901
+   ```
+
+Например: `192.168.1.12:5901`
+
+Нажмите **Connect** — готово.
+
+---
+
+#### Если у вас **macOS**:
+Установите через Homebrew:
+
+   ```bash
+   brew install tigervnc-viewer
+   ```
+
+   или скачайте `.dmg` с сайта TigerVNC.
+Аналогично, вводите:
+
+   ```
+   <ваш-IP>:5901
+   ```
+
+---
+
+*Важно:*
+ПК и телефон должны быть **в одной Wi-Fi сети** (иначе VNC не подключится).
+
+---
+После подключения:
 
 Откройте LXTerm, Склонируйте репозиторий:
 ```bash
