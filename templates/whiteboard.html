@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400&display=swap" rel="stylesheet">
+    <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet">
+    <title>Whiteboard</title>
+</head>
+<body>
+    <div class="page-wrapper whiteboard-wrapper">
+        <div id="whiteboard-controls">
+            <input type="color" id="color-picker" value="#FFFFFF">
+            <button id="clear-canvas-btn">Clear</button>
+            <a href="/">Dashboard</a>
+        </div>
+        <canvas id="whiteboard-canvas"></canvas>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

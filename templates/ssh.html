@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400&display=swap" rel="stylesheet">
+    <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet">
+    <title>SSH Server</title>
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="tile-container">
+            <div class="tile large-tile color-ssh">
+                <div class="status-display">
+                    <span class="status-label">SSH</span>
+                    <span id="ssh-on-btn" class="status-state on" style="display: {{ 'block' if ssh_status == 'ON' else 'none' }};">ON</span>
+                    <span id="ssh-off-btn" class="status-state off" style="display: {{ 'block' if ssh_status == 'OFF' else 'none' }};">OFF</span>
+                </div>
+                <div class="connection-info">ssh user@{{ ip_address }}</div>
+            </div>
+            <a href="/" class="tile nav-tile color-home">
+                <span>Dashboard</span>
+            </a>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
