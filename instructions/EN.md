@@ -239,7 +239,3 @@ Install the **AVNC** app from [GitHub](https://github.com/gujjwal00/avnc) or Goo
 2. Click **Save** and select your connection in the list.
 
 Done! You should now see LXDE and the OBoard interface on your device screen.
-
----
-
-If you want, I can also make a **“GitHub showcase version”** of this README in English, with **intro, screenshots, quick start, and badges**, so it looks professional on your repo. Do you want me to do that?
